@@ -22,6 +22,8 @@ DECLARE @DaysBack int = 1
 SET @DaysBack = @DaysBack * -1
 DECLARE @StartDate datetime = (SELECT DATEADD (day , @DaysBack , GETDATE() ) )
 
+------------------------------
+
 SELECT
     TOP (@MaxRows) 
     [InteractionTimeToServe], 
