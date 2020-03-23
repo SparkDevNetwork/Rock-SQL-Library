@@ -3,19 +3,14 @@
 -- Create Date: 3/21/2020
 -- Description: Displays page load times for a specified page. Also displays who loaded the page if 
 --              known.
--- ...
--- Parameters:
---   @PageId - Id of the page you want timings from. 
---   @MaxRows - The maximum number of rows to return.
---   @DaysBack - The number of days back to look.
 --
 -- Change History:
 --   3/22/2020 Jon Edmiston: Updated SQL to allow passing in Page Id vs having to know ComponentId
 -- =====================================================================================================
 
-DECLARE @PageId int = 1247
-DECLARE @MaxRows int = 1000
-DECLARE @DaysBack int = 1
+DECLARE @PageId int = 1247      -- Id of the page you want timings from. 
+DECLARE @MaxRows int = 1000     -- The maximum number of rows to return.
+DECLARE @DaysBack int = 1       -- The number of days back to look.
 
 -------------------------------------------------------------------------------------------------------
 
