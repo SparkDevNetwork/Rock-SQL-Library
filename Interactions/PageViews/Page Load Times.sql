@@ -3,6 +3,7 @@
 -- Create Date: 3/21/2020
 -- Description: Displays page load times for a specified page. Also displays who loaded the page if 
 --              known.
+--              Note: Time is in seconds.
 --
 -- Change History:
 --   3/22/2020 Jon Edmiston: Updated SQL to allow passing in Page Id vs having to know ComponentId
