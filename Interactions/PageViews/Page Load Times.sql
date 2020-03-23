@@ -23,8 +23,8 @@ SELECT
     TOP (@MaxRows) 
     [InteractionTimeToServe], 
     [InteractionDateTime], 
-    p.[NickName], 
-    p.[LastName]
+    ISNULL( p.[NickName], ''), 
+    ISNULL( p.[LastName], '')
 FROM
     [Interaction] i
     INNER JOIN [InteractionComponent] ic ON ic.[Id] = i.[InteractionComponentId]
