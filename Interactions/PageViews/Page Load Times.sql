@@ -1,6 +1,6 @@
 -- =====================================================================================================
 -- Author:      Jon Edmiston
--- Create Date: 3/22/2020
+-- Create Date: 3/21/2020
 -- Description: Displays page load times for a specified page. Also displays who loaded the page if 
 --              known.
 -- ...
@@ -8,6 +8,9 @@
 --   @PageId - Id of the page you want timings from. 
 --   @MaxRows - The maximum number of rows to return.
 --   @DaysBack - The number of days back to look.
+--
+-- Change History:
+--   3/22/2020 Jon Edmiston: Updated SQL to allow passing in Page Id vs having to know ComponentId
 -- =====================================================================================================
 
 DECLARE @PageId int = 1247
@@ -18,7 +21,6 @@ DECLARE @DaysBack int = 1
 
 SET @DaysBack = @DaysBack * -1
 DECLARE @StartDate datetime = (SELECT DATEADD (day , @DaysBack , GETDATE() ) )
-
 
 SELECT
     TOP (@MaxRows) 
