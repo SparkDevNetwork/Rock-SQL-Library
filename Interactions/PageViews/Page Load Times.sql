@@ -6,7 +6,7 @@
 --              Note: Time is in seconds.
 --
 -- Change History:
---   3/22/2020 Jon Edmiston: Updated SQL to allow passing in Page Id vs having to know ComponentId
+--   3/22/2020 Jon Edmiston: Updated SQL to allow passing in Page Id vs having to know ComponentId.
 -- =====================================================================================================
 
 DECLARE @PageId int = 1247      -- Id of the page you want timings from. 
