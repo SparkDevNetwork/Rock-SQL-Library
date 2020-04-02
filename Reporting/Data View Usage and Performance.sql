@@ -25,5 +25,4 @@ FROM
     [DataView] dv
     INNER JOIN [Category] c ON c.[Id] = dv.[CategoryId]
 --WHERE dv.[Id] = 160
---ORDER BY [TimeToRunMs] DESC
-ORDER BY [Id] DESC
+ORDER BY [TimeToRunMs] DESC
