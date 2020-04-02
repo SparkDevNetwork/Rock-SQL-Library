@@ -16,3 +16,4 @@ FROM
     INNER JOIN [Group] g ON g.[Id] = gs.[GroupId]
     INNER JOIN [GroupTypeRole] gtr ON gtr.[Id] = gs.[GroupTypeRoleId]
     INNER JOIN [DataView] dv ON dv.[Id] = gs.[SyncDataViewId]
+ORDER BY dv.[TimeToRunMS] DESC
