@@ -5,7 +5,7 @@
 --              Note this requires Rock v11. 
 --
 -- Change History:
---   
+--   4/2/2020 Jon Edmiston: Updated SQL to consider "Related Data Views"
 -- =====================================================================================================
 
 SELECT 
@@ -19,9 +19,11 @@ SELECT
     [RunCount], 
     ([PersistedScheduleIntervalMinutes] / 60) AS [Persisted Hrs],
     ISNULL((SELECT COUNT(*) FROM [DataViewFilter] dvf 
-        WHERE dvf.[Selection] LIKE  '%"DataViewId":' + CONVERT( varchar(10), dv.[Id]) + ',%' 
+        WHERE dvf.[Selection] LIKE  '%"DataViewId":' + CONVERT( varchar(10), dv.[Id]) + ',%' OR CONVERT( varchar(36), dv.[Guid] ) =  dvf.[Selection]
     ), 0) AS [Parent Data Views]
 FROM 
     [DataView] dv
     INNER JOIN [Category] c ON c.[Id] = dv.[CategoryId]
-ORDER BY [TimeToRunMs] DESC
+--WHERE dv.[Id] = 160
+--ORDER BY [TimeToRunMs] DESC
+ORDER BY [Id] DESC
