@@ -34,6 +34,12 @@
 This is a public repo that contains SQL statements that are helpful in the day to day administration of Rock.
 
 # Contributing Guidelines
+>SQL can be dangerous as it's outside of the castlewall. In Rock the C# models provide things like data integrity checks
+and business logic validation. They also are much less prone to breaking changes. SQL in Rock should be used for 
+administration and on rare cases reporting, but only after all other reporting options have been considered. **The goal of 
+this repo is in no way an encouragement to add more dynamic SQL reports in your environment.** To do so would be to add more
+risk to the day-to-day operations of your reporting strategy.
+
 The goal of this repo is not to provide a list of every SQL script imaginable, but rather a highly curated
 list of generally helpful and quality written SQL. If you have such a script feel free to send a PR. We 
 will be selective of what we add, so please don't expect every PR to be accepted. Scripts not matching the
