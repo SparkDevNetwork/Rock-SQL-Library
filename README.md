@@ -18,7 +18,8 @@
 * [Page Load Times (v11)](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Interactions/PageViews/Page%20Load%20Times.sql)
 
 ## Reporting
-* [Data View Usage and Performance (v11)](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Reporting/Data%20View%20Usage%20and%20Performance.sql)
+### Data Views
+* [Data View Usage and Performance (v11)](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Reporting/Data%20Views/Data%20View%20Usage%20and%20Performance.sql)
 
 ## Workflows
 * [Workflow Log Batch Deletion](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Workflows/Workflow%20Log%20Batch%20Deletion.sql)
