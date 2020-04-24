@@ -1,3 +1,5 @@
+![Rock RMS SQL Library](https://raw.githubusercontent.com/SparkDevNetwork/Rock-SQL-Library/master/_assets/heading.jpg)
+
 # Rock RMS - SQL Library
 
 This is a public repo that contains SQL statements that are helpful in the day to day administration of Rock.
