@@ -12,8 +12,8 @@ DECLARE @DaysBack int = -1               -- The number of days back to look. Use
 
 -------------------------------------------------------------------------------------------------------
 
-SET @DaysBack = @DaysBack * -1
-DECLARE @StartDate datetime = (SELECT DATEADD (day , @DaysBack , GETDATE() ) )
+DECLARE @DaysBackDays int = @DaysBack * -1
+DECLARE @StartDate datetime = (SELECT DATEADD (day , @DaysBackDays , GETDATE() ) )
 
 ------------------------------
 
