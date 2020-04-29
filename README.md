@@ -1,37 +1,10 @@
 ![Rock RMS SQL Library](https://raw.githubusercontent.com/SparkDevNetwork/Rock-SQL-Library/master/_assets/heading.jpg)
 
-# Table of Contents
-
-## Core
-* [Defined Value Count Per Defined Type](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Core/Defined%20Value%20Count%20Per%20Defined%20Type.sql)
-* [Get Exception Hierarchy](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Core/Get%20Exception%20Hierarchy.sql)
-
-## Groups
-* [Group Sync Information](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Groups/Group%20Sync%20Information.sql)
-
-## Interactions
-
-* [Get Count of Interactions by Component for a Given Channel](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Interactions/Get%20Count%20of%20Interactions%20by%20Component%20for%20a%20Given%20Channel.sql)
-* [Interaction Count by Date for Given Interaction Channel](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Interactions/Interactions%20By%20Date%20for%20Giving%20Interaction%20Channel.sql)
-
-### Page Views
-* [Page Load Times (v11)](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Interactions/PageViews/Page%20Load%20Times.sql)
-
-## Reporting
-### Data Views
-* [Data View Usage and Performance (v11)](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Reporting/Data%20Views/Data%20View%20Usage%20and%20Performance.sql)
-
-## Workflows
-* [Workflow Log Batch Deletion](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Workflows/Workflow%20Log%20Batch%20Deletion.sql)
-* [Workflow Logging Report](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Workflows/Workflow%20Logging%20Report.sql)
-* [Workflow Types Health Check](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Workflows/Workflow%20Types%20Health%20Check.sql)
-
-## Misc
-* [Azure SQL Service Level](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Misc/Azure%20SQL%20Service%20Level.sql)
-* [Top 10 Largest Tables](https://github.com/SparkDevNetwork/Rock-SQL-Library/blob/master/Misc/Top%2010%20Largest%20Tables.sql)
-
-
 This is a public repo that contains SQL statements that are helpful in the day to day administration of Rock.
+
+# Tips
+To find a script you're interested in either select the directory that best matches what you're looking for, or use Github's search feature by typing `t` and a keyword.
+
 
 # Contributing Guidelines
 >SQL can be dangerous as it's outside of the castle wall. In Rock the C# models provide things like data integrity checks
@@ -44,8 +17,6 @@ The goal of this repo is not to provide a list of every SQL script imaginable, b
 list of generally helpful and quality written SQL. If you have such a script feel free to send a PR. We 
 will be selective of what we add, so please don't expect every PR to be accepted. Scripts not matching the
 style guide rules below will be rejected.
-
-*Please be sure to update the Table of Contents with a link to your script in your PR.*
 
 ## Directory Structure
 Scripts should be placed into a directory with the Rock domain as the folder name. Not sure what domain
