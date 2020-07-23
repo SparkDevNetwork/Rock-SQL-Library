@@ -31,7 +31,6 @@ SELECT
     , [DeviceUniqueIdentifier]
     , [DeviceRegistrationId]
     , [MACAddress]
-    , pd.*
 FROM [PersonalDevice] pd
     INNER JOIN [PersonAlias] pa ON pa.[Id] = pd.[PersonAliasId]
     INNER JOIN [Person] p ON p.[Id] = pa.[PersonId]
