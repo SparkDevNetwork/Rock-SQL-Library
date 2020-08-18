@@ -54,10 +54,10 @@ DECLARE @StartDate datetime = (SELECT DATEADD (day , @DaysBack , GETDATE() ) )
 
 SELECT
     TOP (@MaxRows) 
-    [InteractionTimeToServe], 
-    [InteractionDateTime], 
-    ISNULL( p.[NickName], '') [First Name], 
-    ISNULL( p.[LastName], '') [Last Name]
+    [InteractionTimeToServe] 
+    , [InteractionDateTime]
+    , ISNULL( p.[NickName], '') [First Name]
+    , ISNULL( p.[LastName], '') [Last Name]
 FROM
     [Interaction] i
     INNER JOIN [InteractionComponent] ic ON ic.[Id] = i.[InteractionComponentId]
