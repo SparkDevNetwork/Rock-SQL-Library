@@ -12,9 +12,9 @@ SELECT
     dv.[Id], 
     dv.[Name], 
     c.[Name] AS [Category],
-    ([TimeToRunMs]) [Time To Run Ms], 
-    CAST (([TimeToRunMs] / 1000 ) AS decimal (6,2)) [Time To Run Sec], 
-    CAST (([TimeToRunMs] / 1000 / 60) AS decimal (6,2))    [Time To Run Min],
+    ([TimeToRunDurationMilliseconds]) [Time To Run Ms], 
+    CAST (([TimeToRunDurationMilliseconds] / 1000 ) AS decimal (6,2)) [Time To Run Sec], 
+    CAST (([TimeToRunDurationMilliseconds] / 1000 / 60) AS decimal (6,2))    [Time To Run Min],
     [LastRunDateTime], 
     [RunCount], 
     ([PersistedScheduleIntervalMinutes] / 60) AS [Persisted Hrs],
@@ -25,4 +25,4 @@ FROM
     [DataView] dv
     INNER JOIN [Category] c ON c.[Id] = dv.[CategoryId]
 --WHERE dv.[Id] = 160
-ORDER BY [TimeToRunMs] DESC
+ORDER BY [TimeToRunDurationMilliseconds] DESC
