@@ -24,7 +24,7 @@ DECLARE @sqlDeleteViolations varchar(max);
 DECLARE cursor_AlterTable CURSOR FOR
 	SELECT 
 		'ALTER TABLE [dbo].[' + o.name + '] WITH CHECK CHECK CONSTRAINT [' + k.[name] + '];',
-		'DELETE FROM [dbo].[' + o.name + '] WHERE ' + childColumn.name + ' not in (select ' + parentColumn.name + ' from ' + o2.name + ')'
+		'DELETE FROM [dbo].[' + o.name + '] WHERE [' + childColumn.name + '] not in (select [' + parentColumn.name + '] from [' + o2.name + '])'
 	FROM sys.foreign_keys k
 	join sys.objects o on k.parent_object_id = o.object_id
 	join sys.objects o2 on k.referenced_object_id = o2.object_id
