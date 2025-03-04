@@ -7,7 +7,9 @@
 --              Takes around 5-13 seconds to run on the demo database.
 --
 -- Change History:
---   4/20/2022 - NA
+--   03/04/2025 - NA
+--       * Updated to include *DateKey columns (system_type_id = 56 AND Column Name like '%DateKey' )
+--   04/20/2022 - NA
 --       * Updated to also change Date columns  (system_type_id = 40).
 --       * Changed to weeks so that we can also easily adjust the SundayDate column data too.
 --       * Changed to not update if the date would land into the future.
@@ -29,7 +31,19 @@ SELECT @Sql += N'
 FROM sys.columns AS c 
  INNER JOIN sys.tables  AS t ON c.[object_id] = t.[object_id]
  INNER JOIN sys.schemas AS s ON t.[schema_id] = s.[schema_id]
- WHERE ( c.[system_type_id] = 61 OR c.[system_type_id] = 40 ) AND t.[name] <> 'AnalyticsSourceDate'
+ WHERE ( c.[system_type_id] = 61 OR c.[system_type_id] = 40 ) AND ( t.[name] <> 'AnalyticsSourceDate' AND t.[name] <> 'AnalyticsSourcePersonHistorical' )
+ ORDER BY t.[name], c.[name]
+
+-- Also update every DATE KEY field in the database (but not if it pushes it into the future)
+SELECT @Sql += N'
+   UPDATE ' + QUOTENAME(s.name) + '.' + QUOTENAME(t.name) 
+	 + ' SET ' + QUOTENAME(c.name) + ' = CONVERT(INT, FORMAT(DATEADD(WEEK, ' + CAST(@NumWeeksForward AS VARCHAR(10)) + ', '
+	 +       'CONVERT(DATE, CAST(' + QUOTENAME(c.name) + ' AS CHAR(8)), 112)), ''yyyyMMdd''))'
+	 + ' WHERE ' + QUOTENAME(c.name) + ' IS NOT NULL AND @Now > DATEADD( WK, ' + CAST(@NumWeeksForward AS VARCHAR(10)) + ', CONVERT(DATE, CAST(' + QUOTENAME(c.name) + ' AS CHAR(8)), 112));'
+FROM sys.columns AS c 
+ INNER JOIN sys.tables  AS t ON c.[object_id] = t.[object_id]
+ INNER JOIN sys.schemas AS s ON t.[schema_id] = s.[schema_id]
+ WHERE ( c.[system_type_id] = 56 AND c.[name] like '%DateKey' ) AND ( t.[name] <> 'AnalyticsSourceDate' AND t.[name] <> 'AnalyticsSourcePersonHistorical')
  ORDER BY t.[name], c.[name]
 
 EXEC sp_executesql @Sql
